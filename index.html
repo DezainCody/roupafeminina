@@ -6,436 +6,533 @@
     <title>Closet Dellas - Moda Feminina</title>
     <style>
         * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-body {
-    font-family: 'Georgia', 'Times New Roman', serif;
-    background-color: #ffffff;
-    color: #333;
-    line-height: 1.6;
-    overflow-x: hidden;
-}
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            background: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-/* Animações */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+        /* Animações mantidas */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
 
-@keyframes slideInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
 
-@keyframes slideInRight {
-    from {
-        opacity: 0;
-        transform: translateX(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
 
-/* Header com Logo */
-header {
-    padding: 1.5rem 0;
-    text-align: center;
-    background: #ffffff;
-    animation: fadeIn 1s ease-out;
-}
+        /* Container Principal */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            background: white;
+            min-height: 100vh;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        }
 
-.logo-container {
-    display: inline-block;
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    overflow: hidden;
-    box-shadow: 0 8px 30px rgba(255, 182, 193, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    animation: fadeInUp 1s ease-out;
-}
+        /* Header com Logo - Design limpo */
+        header {
+            padding: 2rem 0;
+            text-align: center;
+            background: white;
+            border-bottom: 1px solid #eee;
+            animation: fadeIn 1s ease-out;
+        }
 
-.logo-container:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 40px rgba(255, 182, 193, 0.3);
-}
+        .logo-container {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 1s ease-out;
+            border: 2px solid #f0f0f0;
+        }
 
-.logo-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+        .logo-container:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
 
-.brand-name {
-    margin-top: 1rem;
-    font-size: 1.6rem;
-    font-weight: 300;
-    color: #d4668f;
-    letter-spacing: 2px;
-    animation: fadeInUp 1s ease-out 0.2s both;
-}
+        .logo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-.tagline {
-    font-size: 0.8rem;
-    color: #999;
-    margin-top: 0.4rem;
-    letter-spacing: 1px;
-    animation: fadeInUp 1s ease-out 0.3s both;
-}
+        .brand-name {
+            margin-top: 1rem;
+            font-size: 1.8rem;
+            font-weight: 300;
+            color: #d4668f;
+            letter-spacing: 2px;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
 
-/* Container Principal */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
+        .tagline {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.5rem;
+            letter-spacing: 1px;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
 
-/* Seção de Contato */
-.contact-section {
-    padding: 2rem 0;
-    text-align: center;
-}
+        /* Seção de Contato - Design corporativo */
+        .contact-section {
+            padding: 3rem 0;
+            text-align: center;
+            background: white;
+        }
 
-.section-title {
-    font-size: 1.5rem;
-    font-weight: 300;
-    color: #d4668f;
-    margin-bottom: 1.5rem;
-    letter-spacing: 2px;
-    position: relative;
-    animation: fadeInUp 1s ease-out 0.4s both;
-}
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 300;
+            color: #333;
+            margin-bottom: 2rem;
+            letter-spacing: 1px;
+            position: relative;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
 
-.section-title::after {
-    content: '';
-    display: block;
-    width: 50px;
-    height: 1px;
-    background: #f8bbd0;
-    margin: 1rem auto;
-}
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 2px;
+            background: #d4668f;
+            margin: 1rem auto;
+        }
 
-/* Grid de Contato */
-.contact-grid {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    margin-top: 2rem;
-}
+        /* Grid de Contato */
+        .contact-grid {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
 
-/* Botão WhatsApp */
-.whatsapp-container {
-    animation: slideInLeft 1s ease-out 0.5s both;
-    text-align: center;
-}
+        /* Botão WhatsApp - Design limpo mas destacado */
+        .whatsapp-container {
+            animation: slideInLeft 1s ease-out 0.5s both;
+            text-align: center;
+        }
 
-.whatsapp-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 0.9rem 2rem;
-    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-    color: white;
-    text-decoration: none;
-    border-radius: 50px;
-    font-size: 0.95rem;
-    font-weight: 300;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    border: none;
-    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2);
-}
+        .whatsapp-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            padding: 1rem 3rem;
+            background: #25D366;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2);
+            min-width: 300px;
+        }
 
-.whatsapp-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 25px rgba(37, 211, 102, 0.3);
-}
+        .whatsapp-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+            background: #128C7E;
+        }
 
-.whatsapp-icon {
-    width: 24px;
-    height: 24px;
-}
+        .whatsapp-icon {
+            width: 24px;
+            height: 24px;
+        }
 
-/* Modal do Formulário */
-.modal-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
+        /* Modal do Formulário - Design limpo */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
 
-.modal-overlay.show {
-    display: flex;
-    opacity: 1;
-}
+        .modal-overlay.show {
+            display: flex;
+            opacity: 1;
+        }
 
-.modal-content {
-    background: white;
-    padding: 3rem;
-    border-radius: 20px;
-    max-width: 500px;
-    width: 90%;
-    max-height: 90vh;
-    overflow-y: auto;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-    transform: scale(0.9);
-    transition: transform 0.3s ease;
-}
+        .modal-content {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            max-width: 450px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            transform: scale(0.95);
+            transition: transform 0.3s ease;
+            position: relative;
+            border: 1px solid #eee;
+        }
 
-.modal-overlay.show .modal-content {
-    transform: scale(1);
-}
+        .modal-overlay.show .modal-content {
+            transform: scale(1);
+        }
 
-.modal-header {
-    text-align: center;
-    margin-bottom: 2rem;
-}
+        .modal-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+        }
 
-.modal-title {
-    font-size: 1.3rem;
-    font-weight: 300;
-    color: #d4668f;
-    margin-bottom: 0.4rem;
-}
+        .modal-title {
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
 
-.modal-subtitle {
-    font-size: 0.85rem;
-    color: #999;
-    line-height: 1.5;
-}
+        .modal-subtitle {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.5;
+        }
 
-.close-button {
-    position: absolute;
-    top: 1.5rem;
-    right: 1.5rem;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    color: #999;
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
+        .close-button {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            color: #666;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-.close-button:hover {
-    color: #d4668f;
-}
+        .close-button:hover {
+            background: #e9ecef;
+            color: #333;
+        }
 
-/* Formulário */
-.form-group {
-    margin-bottom: 1.5rem;
-}
+        /* Formulário - Design corporativo */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
 
-.form-group label {
-    display: block;
-    color: #666;
-    font-size: 0.85rem;
-    margin-bottom: 0.4rem;
-    font-weight: 300;
-    letter-spacing: 0.5px;
-}
+        .form-group label {
+            display: block;
+            color: #555;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+        }
 
-.form-group input,
-.form-group select,
-.form-group textarea {
-    width: 100%;
-    padding: 0.6rem;
-    border: 1px solid #f0f0f0;
-    border-radius: 8px;
-    font-size: 0.9rem;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
-    transition: all 0.3s ease;
-    background: #fafafa;
-}
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            background: white;
+        }
 
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: #f8bbd0;
-    background: white;
-}
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #d4668f;
+            box-shadow: 0 0 0 2px rgba(212, 102, 143, 0.1);
+        }
 
-.form-group textarea {
-    resize: vertical;
-    min-height: 80px;
-}
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
 
-.submit-button {
-    width: 100%;
-    padding: 0.8rem;
-    background: linear-gradient(135deg, #f8bbd0 0%, #f48fb1 100%);
-    color: white;
-    border: none;
-    border-radius: 50px;
-    font-size: 0.95rem;
-    font-weight: 300;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 1rem;
-}
+        .submit-button {
+            width: 100%;
+            padding: 1rem;
+            background: #d4668f;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 400;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+            position: relative;
+        }
 
-.submit-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(244, 143, 177, 0.3);
-}
+        .submit-button:hover {
+            background: #c55982;
+            transform: translateY(-1px);
+        }
 
-/* Mapa */
-.map-container {
-    animation: slideInRight 1s ease-out 0.5s both;
-    width: 100%;
-    max-width: 800px;
-}
+        .submit-button:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
 
-.map-wrapper {
-    width: 100%;
-    height: 400px;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+        .loading-spinner {
+            display: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-top: 2px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
 
-.map-wrapper:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
-}
+        .submit-button.loading .button-text {
+            opacity: 0;
+        }
 
-.map-wrapper iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-}
+        .submit-button.loading .loading-spinner {
+            display: block;
+        }
 
-/* Informações Adicionais */
-.info-section {
-    padding: 2.5rem 0;
-    text-align: center;
-    background: #fafafa;
-    animation: fadeIn 1s ease-out 0.6s both;
-}
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
 
-.info-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin-top: 2rem;
-}
+        /* Mapa - Design limpo */
+        .map-container {
+            animation: slideInRight 1s ease-out 0.5s both;
+            width: 100%;
+            max-width: 800px;
+        }
 
-.info-item {
-    padding: 2rem;
-    animation: fadeInUp 1s ease-out 0.7s both;
-}
+        .map-wrapper {
+            width: 100%;
+            height: 350px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #eee;
+        }
 
-.info-item h3 {
-    color: #d4668f;
-    font-weight: 300;
-    font-size: 1.1rem;
-    margin-bottom: 0.8rem;
-    letter-spacing: 1px;
-}
+        .map-wrapper:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
 
-.info-item p {
-    color: #666;
-    font-size: 0.85rem;
-    line-height: 1.8;
-}
+        .map-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
 
-/* Footer */
-footer {
-    text-align: center;
-    padding: 2rem 0;
-    background: white;
-    color: #999;
-    font-size: 0.85rem;
-    letter-spacing: 0.5px;
-    border-top: 1px solid #f0f0f0;
-}
+        /* Informações Adicionais - Design corporativo */
+        .info-section {
+            padding: 3rem 0;
+            text-align: center;
+            background: #fafbfc;
+            border-top: 1px solid #eee;
+            animation: fadeIn 1s ease-out 0.6s both;
+        }
 
-/* Responsivo */
-@media (max-width: 768px) {
-    .info-grid {
-        grid-template-columns: 1fr;
-    }
-    .map-wrapper {
-        height: 300px;
-    }
-    .modal-content {
-        padding: 2rem;
-    }
-}
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
 
-/* Mensagem de Sucesso */
-.success-message {
-    display: none;
-    text-align: center;
-    padding: 2rem;
-    background: #e8f5e9;
-    border-radius: 10px;
-    margin-top: 2rem;
-    animation: fadeInUp 0.5s ease-out;
-}
+        .info-item {
+            padding: 2rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border: 1px solid #f0f0f0;
+            animation: fadeInUp 1s ease-out 0.7s both;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-.success-message.show {
-    display: block;
-}
+        .info-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+        }
 
-.success-message h3 {
-    color: #4caf50;
-    margin-bottom: 0.5rem;
-    font-weight: 300;
-}
+        .info-item h3 {
+            color: #d4668f;
+            font-weight: 400;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            letter-spacing: 0.5px;
+        }
 
-.success-message p {
-    color: #666;
-    font-size: 0.9rem;
-}
+        .info-item p {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
 
+        /* Footer - Design limpo */
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            background: white;
+            color: #666;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            border-top: 1px solid #eee;
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .container {
+                box-shadow: none;
+            }
+            
+            .logo-container {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .brand-name {
+                font-size: 1.4rem;
+            }
+            
+            .whatsapp-button {
+                padding: 0.9rem 2rem;
+                font-size: 0.9rem;
+                min-width: 280px;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .map-wrapper {
+                height: 280px;
+            }
+            
+            .modal-content {
+                padding: 2rem;
+                margin: 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Mensagem de Sucesso */
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 1.5rem;
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-radius: 6px;
+            margin-top: 1rem;
+            color: #155724;
+            animation: fadeInUp 0.5s ease-out;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        .success-message h3 {
+            color: #155724;
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+            font-size: 1rem;
+        }
+
+        .success-message p {
+            color: #155724;
+            font-size: 0.9rem;
+        }
+
+        /* Melhorias visuais */
+        .contact-grid p {
+            margin-top: 1rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
     </style>
 </head>
 <body>
-    <header>
-        <div class="logo-container">
-            <img src="https://i.postimg.cc/65Wz3j7G/CLOSET-DELLAS-jpg.jpg" alt="Closet Dellas">
-        </div>
-        <h1 class="brand-name">CLOSET DELLAS</h1>
-        <p class="tagline">Moda Feminina com Elegância</p>
-    </header>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <img src="https://i.postimg.cc/65Wz3j7G/CLOSET-DELLAS-jpg.jpg" alt="Closet Dellas">
+            </div>
+            <h1 class="brand-name">CLOSET DELLAS</h1>
+            <p class="tagline">Moda Feminina com Elegância</p>
+        </header>
 
-    <section class="contact-section">
-        <div class="container">
+        <section class="contact-section">
             <h2 class="section-title">Entre em Contato</h2>
             
             <div class="contact-grid">
@@ -446,9 +543,7 @@ footer {
                         </svg>
                         Atendimento no WhatsApp
                     </button>
-                    <p style="margin-top: 1rem; color: #999; font-size: 0.9rem;">
-                        Clique para falar conosco
-                    </p>
+                    <p>Clique para falar conosco</p>
                 </div>
 
                 <div class="map-container">
@@ -462,12 +557,11 @@ footer {
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 Closet Dellas. Todos os direitos reservados.</p>
-    </footer>
+        </section>
+        <footer>
+            <p>&copy; 2025 Closet Dellas. Todos os direitos reservados.</p>
+        </footer>
+    </div>
 
     <!-- Modal do Formulário -->
     <div id="formModal" class="modal-overlay">
@@ -484,17 +578,19 @@ footer {
             <form id="whatsappForm">
                 <div class="form-group">
                     <label for="nome">Seu Nome</label>
-                    <input type="text" id="nome" name="nome" required>
+                    <input type="text" id="nome" name="nome" required placeholder="Como você gostaria de ser chamada?">
                 </div>
                 
                 <div class="form-group">
                     <label for="telefone">Telefone</label>
-                    <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" required>
+                    <input type="tel" id="telefone" name="telefone" placeholder="(83) 99999-9999" required>
                 </div>
+                
                 <div class="form-group">
                     <label for="endereco">Endereço (opcional)</label>
-                    <input type="text" id="endereco" name="endereco" placeholder="Digite seu endereço">
+                    <input type="text" id="endereco" name="endereco" placeholder="Para calcularmos a entrega">
                 </div>
+                
                 <div class="form-group">
                     <label for="tamanho">Tamanho que Procura</label>
                     <select id="tamanho" name="tamanho">
@@ -510,10 +606,13 @@ footer {
                 
                 <div class="form-group">
                     <label for="mensagem">Algo específico? (opcional)</label>
-                    <textarea id="mensagem" name="mensagem" placeholder="Ex: Procuro vestido para casamento..."></textarea>
+                    <textarea id="mensagem" name="mensagem" placeholder="Ex: Procuro vestido para casamento, roupa para trabalho..."></textarea>
                 </div>
                 
-                <button type="submit" class="submit-button">Enviar para WhatsApp</button>
+                <button type="submit" class="submit-button">
+                    <span class="button-text">Enviar para WhatsApp</span>
+                    <div class="loading-spinner"></div>
+                </button>
             </form>
             
             <div id="successMessage" class="success-message">
@@ -533,9 +632,11 @@ footer {
         function closeModal() {
             document.getElementById('formModal').classList.remove('show');
             document.body.style.overflow = 'auto';
-            // Limpar formulário
             document.getElementById('whatsappForm').reset();
             document.getElementById('successMessage').classList.remove('show');
+            const submitButton = document.querySelector('.submit-button');
+            submitButton.classList.remove('loading');
+            submitButton.disabled = false;
         }
 
         // Fechar modal ao clicar fora
@@ -563,49 +664,86 @@ footer {
             e.target.value = formattedValue;
         });
 
+        // Validar telefone
+        function isValidPhone(phone) {
+            const cleanPhone = phone.replace(/\D/g, '');
+            return cleanPhone.length >= 10;
+        }
+
         // Enviar formulário
         document.getElementById('whatsappForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
+            const submitButton = document.querySelector('.submit-button');
+            submitButton.classList.add('loading');
+            submitButton.disabled = true;
+            
             // Coletar dados
-            const nome = document.getElementById('nome').value;
-            const telefone = document.getElementById('telefone').value;
-            const interesse = document.getElementById('interesse').value;
+            const nome = document.getElementById('nome').value.trim();
+            const telefone = document.getElementById('telefone').value.trim();
+            const endereco = document.getElementById('endereco').value.trim();
             const tamanho = document.getElementById('tamanho').value;
-            const mensagem = document.getElementById('mensagem').value;
+            const mensagem = document.getElementById('mensagem').value.trim();
+            
+            // Validações
+            if (!nome || !telefone) {
+                alert('Por favor, preencha seu nome e telefone.');
+                submitButton.classList.remove('loading');
+                submitButton.disabled = false;
+                return;
+            }
+            
+            if (!isValidPhone(telefone)) {
+                alert('Por favor, digite um telefone válido.');
+                submitButton.classList.remove('loading');
+                submitButton.disabled = false;
+                return;
+            }
             
             // Montar mensagem
-            let whatsappMessage = `*Olá! Vim pelo site Closet Dellas*\n\n`;
-            whatsappMessage += `*Nome:* ${nome}\n`;
-            whatsappMessage += `*Telefone:* ${telefone}\n`;
-            whatsappMessage += `*Interesse:* ${interesse}\n`;
+            let whatsappMessage = `🌸 *Olá! Vim pelo site Closet Dellas*\n\n`;
+            whatsappMessage += `👤 *Nome:* ${nome}\n`;
+            whatsappMessage += `📱 *Telefone:* ${telefone}\n`;
+            
+            if (endereco) {
+                whatsappMessage += `📍 *Endereço:* ${endereco}\n`;
+            }
             if (tamanho) {
-                whatsappMessage += `*Tamanho:* ${tamanho}\n`;
+                whatsappMessage += `👗 *Tamanho:* ${tamanho}\n`;
             }
             if (mensagem) {
-                whatsappMessage += `*Mensagem:* ${mensagem}\n`;
+                whatsappMessage += `💬 *Mensagem:* ${mensagem}\n`;
             }
             
-            // Número do WhatsApp (substitua pelo número real)
-            const whatsappNumber = '5583991816152'; // Coloque o número aqui
+            whatsappMessage += `\n_Aguardo seu contato! 😊_`;
             
-            // Mostrar mensagem de sucesso
-            document.getElementById('successMessage').classList.add('show');
+            const whatsappNumber = '5583991816152';
             
-            // Aguardar um momento e redirecionar
+            // Processar e redirecionar
             setTimeout(() => {
-                const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
-                window.open(whatsappURL, '_blank');
+                document.getElementById('successMessage').classList.add('show');
                 
-                // Fechar modal após redirecionamento
-                setTimeout(closeModal, 1000);
-            }, 1500);
+                setTimeout(() => {
+                    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+                    
+                    try {
+                        const newWindow = window.open(whatsappURL, '_blank');
+                        if (!newWindow || newWindow.closed || typeof newWindow.closed == 'undefined') {
+                            window.location.href = whatsappURL;
+                        }
+                    } catch (error) {
+                        window.location.href = whatsappURL;
+                    }
+                    
+                    setTimeout(closeModal, 800);
+                }, 1200);
+            }, 500);
         });
 
-        // Animação de entrada ao scroll (opcional)
+        // Animação de entrada ao scroll
         const observerOptions = {
             threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+            rootMargin: '0px 0px -30px 0px'
         };
 
         const observer = new IntersectionObserver(function(entries) {
@@ -617,10 +755,24 @@ footer {
         }, observerOptions);
 
         // Observar elementos para animação
-        document.querySelectorAll('.info-item').forEach(el => {
-            el.style.animationPlayState = 'paused';
-            observer.observe(el);
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.info-item').forEach(el => {
+                el.style.animationPlayState = 'paused';
+                observer.observe(el);
+            });
         });
+
+        // ESC para fechar modal
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Otimização para dispositivos móveis
+        if ('ontouchstart' in window) {
+            document.body.classList.add('touch-device');
+        }
     </script>
 </body>
 </html>
