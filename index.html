@@ -8,7 +8,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
         <style>
-            * {
+        * {
                 margin: 0;
                 padding: 0;
                 box-sizing: border-box;
@@ -296,9 +296,9 @@
                 font-weight: 300;
             }
     
-            /* Seção de Contato */
+            /* Seção de Contato - REDUZINDO PADDING */
             .contact-section {
-                padding: 4rem 0;
+                padding: 2rem 0; /* Reduzido de 4rem para 2rem */
                 text-align: center;
                 background: white;
             }
@@ -308,7 +308,7 @@
                 font-size: 2.2rem;
                 font-weight: 600;
                 color: #333;
-                margin-bottom: 3rem;
+                margin-bottom: 2rem; /* Reduzido de 3rem para 2rem */
                 letter-spacing: 1px;
                 position: relative;
                 animation: fadeInUp 1s ease-out 0.4s both;
@@ -320,17 +320,17 @@
                 width: 80px;
                 height: 3px;
                 background: linear-gradient(45deg, #F5F5DC, #D2B48C, #C8B99C);
-                margin: 1.5rem auto;
+                margin: 1rem auto; /* Reduzido de 1.5rem para 1rem */
                 border-radius: 2px;
             }
     
-            /* Grid de Contato */
+            /* Grid de Contato - REDUZINDO GAP */
             .contact-grid {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                gap: 3rem;
-                margin-top: 2rem;
+                gap: 1.5rem; /* Reduzido de 3rem para 1.5rem */
+                margin-top: 1rem; /* Reduzido de 2rem para 1rem */
             }
     
             /* Botão WhatsApp com efeitos melhorados */
@@ -646,16 +646,17 @@
                 display: block;
             }
     
-            /* Mapa melhorado */
+            /* Mapa melhorado - AJUSTANDO POSIÇÃO */
             .map-container {
                 animation: slideInRight 1s ease-out 0.5s both;
                 width: 100%;
                 max-width: 900px;
+                margin-top: 1rem; /* Adicionado para controlar espaçamento */
             }
     
             .map-wrapper {
                 width: 100%;
-                height: 400px;
+                height: 350px; /* Reduzido de 400px para 350px */
                 border-radius: 20px;
                 overflow: hidden;
                 box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
@@ -886,7 +887,7 @@
                 font-size: 1rem;
             }
     
-            /* Responsivo */
+            /* RESPONSIVO - AJUSTANDO PARA MOBILE */
             @media (max-width: 768px) {
                 .hero-banner {
                     height: 50vh;
@@ -906,6 +907,14 @@
                     box-shadow: none;
                 }
                 
+                .contact-section {
+                    padding: 1.5rem 0; /* Ainda mais compacto no mobile */
+                }
+                
+                .contact-grid {
+                    gap: 1rem; /* Espaçamento ainda menor no mobile */
+                }
+                
                 .whatsapp-button {
                     padding: 1rem 2.5rem;
                     font-size: 1rem;
@@ -919,7 +928,7 @@
                 }
                 
                 .map-wrapper {
-                    height: 300px;
+                    height: 250px; /* Menor no mobile */
                 }
                 
                 .modal-content {
@@ -930,6 +939,7 @@
                 
                 .section-title {
                     font-size: 1.8rem;
+                    margin-bottom: 1.5rem; /* Reduzido ainda mais no mobile */
                 }
                 
                 .floating-whatsapp {
