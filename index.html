@@ -1,5 +1,4 @@
-
-    <!DOCTYPE html>
+<!DOCTYPE html>
     <html lang="pt-BR">
     <head>
         <meta charset="UTF-8">
@@ -9,7 +8,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
         <style>
-             * {
+            * {
                 margin: 0;
                 padding: 0;
                 box-sizing: border-box;
@@ -339,6 +338,12 @@
                 animation: slideInLeft 1s ease-out 0.5s both;
                 text-align: center;
             }
+
+            /* Botão Website com mesma estética */
+            .website-container {
+                animation: slideInLeft 1s ease-out 0.7s both;
+                text-align: center;
+            }
     
             .whatsapp-button {
                 display: inline-flex;
@@ -391,8 +396,23 @@
             }
     
             .whatsapp-icon {
-                width: 28px;
-                height: 28px;
+                width: 40px;
+                height: 40px;
+            }
+
+            /* Estilo específico para a logo do site */
+            .site-logo-icon {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 2px solid rgba(139, 115, 85, 0.3);
+                transition: all 0.3s ease;
+            }
+
+            .whatsapp-button:hover .site-logo-icon {
+                border-color: rgba(255, 255, 255, 0.5);
+                transform: scale(1.1);
             }
     
             /* Botão Flutuante WhatsApp */
@@ -957,6 +977,14 @@
                         <span>Atendimento no WhatsApp</span>
                     </button>
                     <p>Clique para falar conosco</p>
+                </div>
+
+                <div class="website-container fade-in-element">
+                    <a href="https://dezaincody.github.io/institucional/" target="_blank" class="whatsapp-button">
+                        <img src="https://i.postimg.cc/DyFRtpjv/HG-logo.jpg" alt="HG Logo" class="site-logo-icon">
+                        <span>Visite Nosso Site</span>
+                    </a>
+                    <p>Conheça nossa loja completa</p>
                 </div>
 
                 <div class="map-container fade-in-element">
