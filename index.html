@@ -112,8 +112,8 @@
         /* Banner Parallax */
         .hero-banner {
             height: 60vh;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-                         url('https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -125,19 +125,83 @@
             position: relative;
             overflow: hidden;
         }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 3rem 2rem;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
         .hero-content h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 3.5rem;
-            font-weight: 700;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.2rem;
+            font-weight: 600;
+            background: linear-gradient(45deg, #FFE4E1, #FFC0CB, #FFB6C1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 4px;
             margin-bottom: 1rem;
             animation: fadeInUp 1s ease-out 0.5s both;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            text-transform: uppercase;
         }
 
         .hero-content p {
             font-size: 1.2rem;
             animation: fadeInUp 1s ease-out 0.7s both;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+            font-weight: 300;
+            letter-spacing: 1px;
+            color: #f8f9fa;
+        }
+
+        .hero-content .logo-container {
+            display: inline-block;
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(255, 192, 203, 0.3);
+            transition: all 0.4s ease;
+            animation: fadeInUp 1s ease-out;
+            border: 3px solid #f0f0f0;
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-content .logo-container::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            background: linear-gradient(45deg, #FFE4E1, #FFC0CB, #FFB6C1);
+            border-radius: 50%;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .hero-content .logo-container:hover::before {
+            opacity: 1;
+        }
+
+        .hero-content .logo-container:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(255, 182, 193, 0.4);
+        }
+
+        .hero-content .logo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .animated-text {
@@ -809,17 +873,13 @@
                 font-size: 2.5rem;
             }
             
-            .container {
-                box-shadow: none;
-            }
-            
-            .logo-container {
+            .hero-content .logo-container {
                 width: 120px;
                 height: 120px;
             }
             
-            .brand-name {
-                font-size: 2.2rem;
+            .container {
+                box-shadow: none;
             }
             
             .whatsapp-button {
@@ -867,17 +927,22 @@
     <div class="loader-container" id="loader">
         <div class="loader"></div>
     </div>
-    <div class="container">
-        <header>
+
+    <!-- Banner Hero com Logo e Descrição -->
+    <section class="hero-banner">
+        <div class="hero-content">
             <div class="logo-container">
                 <img src="https://i.postimg.cc/65Wz3j7G/CLOSET-DELLAS-jpg.jpg" alt="Closet Dellas">
             </div>
             <h1 class="brand-name">CLOSET DELLAS</h1>
             <p class="tagline">Moda Feminina com Elegância</p>
-        </header>
+        </div>
+    </section>
+
+    <div class="container">
 
         <section class="contact-section">
-          
+            
             
             <div class="contact-grid">
                 <div class="whatsapp-container fade-in-element">
@@ -902,6 +967,7 @@
                 </div>
             </div>
         </section>
+
     </div>
 
     <!-- Botão Flutuante do WhatsApp -->
@@ -914,6 +980,8 @@
     <!-- Footer melhorado -->
     <footer>
         <div class="footer-content">
+            <div class="footer-grid">
+            </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 Closet Dellas. Todos os direitos reservados.</p>
             </div>
@@ -1155,17 +1223,6 @@
                 }
             });
         });
-
-        // Animação de texto no hero
-        const animatedText = document.querySelector('.animated-text');
-        if (animatedText) {
-            setInterval(() => {
-                animatedText.style.animation = 'none';
-                setTimeout(() => {
-                    animatedText.style.animation = 'float 3s ease-in-out infinite';
-                }, 10);
-            }, 6000);
-        }
 
         // Otimização para dispositivos móveis
         if ('ontouchstart' in window) {
