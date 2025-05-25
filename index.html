@@ -111,7 +111,7 @@
 
         /* Banner Parallax */
         .hero-banner {
-            height: 60vh;
+            height: 35vh;
             background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
                         url('https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
             background-size: cover;
@@ -124,6 +124,7 @@
             color: white;
             position: relative;
             overflow: hidden;
+            min-height: 280px;
         }
 
         .hero-content {
@@ -139,7 +140,7 @@
 
         .hero-content h1 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 3.2rem;
+            font-size: 2.8rem;
             font-weight: 600;
             background: linear-gradient(45deg, #FFE4E1, #FFC0CB, #FFB6C1);
             -webkit-background-clip: text;
@@ -150,6 +151,7 @@
             animation: fadeInUp 1s ease-out 0.5s both;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
             text-transform: uppercase;
+            white-space: nowrap;
         }
 
         .hero-content p {
@@ -163,8 +165,8 @@
 
         .hero-content .logo-container {
             display: inline-block;
-            width: 140px;
-            height: 140px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
             overflow: hidden;
             box-shadow: 0 8px 25px rgba(255, 192, 203, 0.3);
@@ -172,7 +174,7 @@
             animation: fadeInUp 1s ease-out;
             border: 3px solid #f0f0f0;
             position: relative;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
 
         .hero-content .logo-container::before {
