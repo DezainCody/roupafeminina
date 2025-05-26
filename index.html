@@ -350,11 +350,11 @@
                 align-items: center;
                 justify-content: center;
                 gap: 1rem;
-                padding: 1.2rem 3.5rem;
+                padding: 1.2rem 2.5rem;
                 background: linear-gradient(45deg, #F5F5DC, #D2B48C, #C8B99C);
                 color: #8B7355;
                 text-decoration: none;
-                border-radius: 50px;
+                border-radius: 15px; /* ALTERADO: de 50px para 15px - bordas menos arredondadas */
                 font-size: 1.1rem;
                 font-weight: 500;
                 letter-spacing: 0.5px;
@@ -363,8 +363,10 @@
                 border: none;
                 box-shadow: 0 8px 25px rgba(210, 180, 140, 0.4);
                 min-width: 320px;
+                max-width: 320px;
                 position: relative;
                 overflow: hidden;
+                height: 64px;
             }
     
             .whatsapp-button::before {
@@ -398,16 +400,18 @@
             .whatsapp-icon {
                 width: 40px;
                 height: 40px;
+                flex-shrink: 0;
             }
 
             /* Estilo específico para a logo do site */
             .site-logo-icon {
-                width: 50px;
-                height: 50px;
+                width: 40px;
+                height: 40px;
                 border-radius: 50%;
                 object-fit: cover;
                 border: 2px solid rgba(139, 115, 85, 0.3);
                 transition: all 0.3s ease;
+                flex-shrink: 0;
             }
 
             .whatsapp-button:hover .site-logo-icon {
@@ -916,9 +920,11 @@
                 }
                 
                 .whatsapp-button {
-                    padding: 1rem 2.5rem;
+                    padding: 1rem 2rem;
                     font-size: 1rem;
                     min-width: 280px;
+                    max-width: 280px;
+                    height: 56px;
                 }
                 
                 .info-grid,
