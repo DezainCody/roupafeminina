@@ -346,6 +346,7 @@
             .button-container:nth-child(6) { animation-delay: 1.0s; }
             .button-container:nth-child(7) { animation-delay: 1.1s; }
             .button-container:nth-child(8) { animation-delay: 1.2s; }
+            .button-container:nth-child(9) { animation-delay: 1.3s; }
     
             .main-button {
                 display: inline-flex;
@@ -450,6 +451,28 @@
 
             .disabled-button::before {
                 display: none;
+            }
+
+            /* Botão Dezain Cody com tonalidade azul */
+            .dezain-button {
+                background: linear-gradient(45deg, #4A90E2, #357ABD, #2E5984) !important;
+                color: #1A365D !important;
+            }
+
+            .dezain-button::before {
+                background: linear-gradient(45deg, #357ABD, #2E5984, #1E3A52) !important;
+            }
+
+            .dezain-button:hover {
+                box-shadow: 0 15px 40px rgba(74, 144, 226, 0.5) !important;
+            }
+
+            .dezain-button .site-logo-icon {
+                border-color: rgba(26, 54, 93, 0.3);
+            }
+
+            .dezain-button:hover .site-logo-icon {
+                border-color: rgba(255, 255, 255, 0.5);
             }
     
             /* Botão Flutuante WhatsApp */
@@ -1029,6 +1052,17 @@
                         <span>Atendimento no WhatsApp</span>
                     </button>
                     <p>Clique para falar conosco</p>
+                </div>
+
+                <!-- Dezain Cody -->
+                <div class="button-container fade-in-element">
+                    <a href="https://dezaincody.github.io/dezaincode/" target="_blank" class="main-button dezain-button">
+                        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 3C9.1 3 10 3.9 10 5V8H8V5H5V8C5 10.21 6.79 12 9 12H11V14H9C6.79 14 5 15.79 5 18V21H8V18H10V21C10 22.1 9.1 23 8 23H3C1.9 23 1 22.1 1 21V18C1 15.24 3.24 13 6 13C3.24 13 1 10.76 1 8V5C1 3.9 1.9 3 3 3H8ZM16 3H21C22.1 3 23 3.9 23 5V8C23 10.76 20.76 13 18 13C20.76 13 23 15.24 23 18V21C23 22.1 22.1 23 21 23H16C14.9 23 14 22.1 14 21V18H16V21H19V18C19 15.79 17.21 14 15 14H13V12H15C17.21 12 19 10.21 19 8V5H16V8H14V5C14 3.9 14.9 3 16 3Z" fill="currentColor"/>
+                        </svg>
+                        <span>Dezain Cody</span>
+                    </a>
+                    <p>Portfólio e projetos</p>
                 </div>
 
                 <!-- Moda Feminina -->
