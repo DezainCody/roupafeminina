@@ -326,29 +326,26 @@
     
             /* Grid de Contato - REDUZINDO GAP */
             .contact-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                display: flex;
+                flex-direction: column;
+                align-items: center;
                 gap: 1.5rem; /* Reduzido de 3rem para 1.5rem */
                 margin-top: 1rem; /* Reduzido de 2rem para 1rem */
-                align-items: start;
             }
     
             /* Botão WhatsApp com efeitos melhorados */
-            .button-container {
+            .whatsapp-container {
                 animation: slideInLeft 1s ease-out 0.5s both;
                 text-align: center;
             }
 
-            .button-container:nth-child(2) { animation-delay: 0.6s; }
-            .button-container:nth-child(3) { animation-delay: 0.7s; }
-            .button-container:nth-child(4) { animation-delay: 0.8s; }
-            .button-container:nth-child(5) { animation-delay: 0.9s; }
-            .button-container:nth-child(6) { animation-delay: 1.0s; }
-            .button-container:nth-child(7) { animation-delay: 1.1s; }
-            .button-container:nth-child(8) { animation-delay: 1.2s; }
-            .button-container:nth-child(9) { animation-delay: 1.3s; }
+            /* Botão Website com mesma estética */
+            .website-container {
+                animation: slideInLeft 1s ease-out 0.7s both;
+                text-align: center;
+            }
     
-            .main-button {
+            .whatsapp-button {
                 display: inline-flex;
                 align-items: center;
                 justify-content: center;
@@ -357,7 +354,7 @@
                 background: linear-gradient(45deg, #F5F5DC, #D2B48C, #C8B99C);
                 color: #8B7355;
                 text-decoration: none;
-                border-radius: 15px; /* ALTERADO: de 50px para 15px - bordas menos arredondadas */
+                border-radius: 15px;
                 font-size: 1.1rem;
                 font-weight: 500;
                 letter-spacing: 0.5px;
@@ -372,7 +369,7 @@
                 height: 64px;
             }
     
-            .main-button::before {
+            .whatsapp-button::before {
                 content: '';
                 position: absolute;
                 top: 0;
@@ -384,29 +381,29 @@
                 z-index: 0;
             }
     
-            .main-button:hover::before {
+            .whatsapp-button:hover::before {
                 left: 0;
             }
     
-            .main-button:hover {
+            .whatsapp-button:hover {
                 transform: translateY(-5px) scale(1.05);
                 box-shadow: 0 15px 40px rgba(200, 185, 156, 0.5);
                 color: white;
             }
     
-            .main-button span,
-            .button-icon {
+            .whatsapp-button span,
+            .whatsapp-icon {
                 position: relative;
                 z-index: 1;
             }
     
-            .button-icon {
+            .whatsapp-icon {
                 width: 40px;
                 height: 40px;
                 flex-shrink: 0;
             }
 
-            /* Estilo específico para logos/imagens */
+            /* Estilo específico para a logo do site */
             .site-logo-icon {
                 width: 40px;
                 height: 40px;
@@ -417,62 +414,9 @@
                 flex-shrink: 0;
             }
 
-            .main-button:hover .site-logo-icon {
+            .whatsapp-button:hover .site-logo-icon {
                 border-color: rgba(255, 255, 255, 0.5);
                 transform: scale(1.1);
-            }
-
-            .icon-svg {
-                width: 40px;
-                height: 40px;
-                fill: currentColor;
-                flex-shrink: 0;
-            }
-
-            .main-button:hover .icon-svg {
-                transform: scale(1.1);
-            }
-
-            .button-container p {
-                margin-top: 0.8rem;
-                color: #666;
-                font-size: 0.9rem;
-            }
-
-            .disabled-button {
-                opacity: 0.6;
-                cursor: not-allowed;
-            }
-
-            .disabled-button:hover {
-                transform: none;
-                box-shadow: 0 8px 25px rgba(210, 180, 140, 0.4);
-            }
-
-            .disabled-button::before {
-                display: none;
-            }
-
-            /* Botão Dezain Cody com tonalidade azul */
-            .dezain-button {
-                background: linear-gradient(45deg, #4A90E2, #357ABD, #2E5984) !important;
-                color: #1A365D !important;
-            }
-
-            .dezain-button::before {
-                background: linear-gradient(45deg, #357ABD, #2E5984, #1E3A52) !important;
-            }
-
-            .dezain-button:hover {
-                box-shadow: 0 15px 40px rgba(74, 144, 226, 0.5) !important;
-            }
-
-            .dezain-button .site-logo-icon {
-                border-color: rgba(26, 54, 93, 0.3);
-            }
-
-            .dezain-button:hover .site-logo-icon {
-                border-color: rgba(255, 255, 255, 0.5);
             }
     
             /* Botão Flutuante WhatsApp */
@@ -712,8 +656,6 @@
                 width: 100%;
                 max-width: 900px;
                 margin-top: 1rem; /* Adicionado para controlar espaçamento */
-                grid-column: 1 / -1; /* Ocupa toda a largura do grid */
-                justify-self: center;
             }
     
             .map-wrapper {
@@ -974,11 +916,10 @@
                 }
                 
                 .contact-grid {
-                    grid-template-columns: 1fr;
                     gap: 1rem; /* Espaçamento ainda menor no mobile */
                 }
                 
-                .main-button {
+                .whatsapp-button {
                     padding: 1rem 2rem;
                     font-size: 1rem;
                     min-width: 280px;
@@ -1042,11 +983,11 @@
 
         <section class="contact-section">
             
+            
             <div class="contact-grid">
-                <!-- WhatsApp -->
-                <div class="button-container fade-in-element">
-                    <button class="main-button" onclick="openModal()">
-                        <svg class="button-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <div class="whatsapp-container fade-in-element">
+                    <button class="whatsapp-button" onclick="openModal()">
+                        <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" fill="currentColor"/>
                         </svg>
                         <span>Atendimento no WhatsApp</span>
@@ -1054,82 +995,14 @@
                     <p>Clique para falar conosco</p>
                 </div>
 
-                <!-- Dezain Cody -->
-                <div class="button-container fade-in-element">
-                    <a href="https://dezaincody.github.io/dezaincode/" target="_blank" class="main-button dezain-button">
-                        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8 3C9.1 3 10 3.9 10 5V8H8V5H5V8C5 10.21 6.79 12 9 12H11V14H9C6.79 14 5 15.79 5 18V21H8V18H10V21C10 22.1 9.1 23 8 23H3C1.9 23 1 22.1 1 21V18C1 15.24 3.24 13 6 13C3.24 13 1 10.76 1 8V5C1 3.9 1.9 3 3 3H8ZM16 3H21C22.1 3 23 3.9 23 5V8C23 10.76 20.76 13 18 13C20.76 13 23 15.24 23 18V21C23 22.1 22.1 23 21 23H16C14.9 23 14 22.1 14 21V18H16V21H19V18C19 15.79 17.21 14 15 14H13V12H15C17.21 12 19 10.21 19 8V5H16V8H14V5C14 3.9 14.9 3 16 3Z" fill="currentColor"/>
-                        </svg>
-                        <span>Dezain Cody</span>
-                    </a>
-                    <p>Portfólio e projetos</p>
-                </div>
-
-                <!-- Moda Feminina -->
-                <div class="button-container fade-in-element">
-                    <a href="https://dezaincody.github.io/instional/" target="_blank" class="main-button">
+                <div class="website-container fade-in-element">
+                    <a href="https://dezaincody.github.io/instional/" target="_blank" class="whatsapp-button">
                         <img src="https://i.postimg.cc/DyFRtpjv/HG-logo.jpg" alt="Holy Glo Beauty" class="site-logo-icon">
-                        <span>Moda Feminina</span>
+                        <span>Visite Nosso Site</span>
                     </a>
-                    <p>Nossa loja completa feminina</p>
+                    <p>Conheça nossa loja completa</p>
                 </div>
 
-                <!-- Moda Masculina -->
-                <div class="button-container fade-in-element">
-                    <a href="https://dezaincody.github.io/sitemasculino/" target="_blank" class="main-button">
-                        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M16 4L18.29 6.29L13.41 11.17L17.5 15.26L16.09 16.67L12 12.58L7.91 16.67L6.5 15.26L10.59 11.17L5.71 6.29L8 4H16ZM16 2H8C7.45 2 7 2.45 7 3S7.45 4 8 4H16C16.55 4 17 3.55 17 3S16.55 2 16 2Z" fill="currentColor"/>
-                        </svg>
-                        <span>Moda Masculina</span>
-                    </a>
-                    <p>Roupas e acessórios masculinos</p>
-                </div>
-
-                <!-- Móveis -->
-                <div class="button-container fade-in-element">
-                    <a href="https://dezaincody.github.io/sitepadr-o/" target="_blank" class="main-button">
-                        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3 13H11V3H3V13ZM3 21H11V15H3V21ZM13 21H21V11H13V21ZM13 3V9H21V3H13Z" fill="currentColor"/>
-                        </svg>
-                        <span>Móveis & Decoração</span>
-                    </a>
-                    <p>Móveis para sua casa</p>
-                </div>
-
-                <!-- Clínica Odontológica -->
-                <div class="button-container fade-in-element">
-                    <a href="https://dezaincody.github.io/odontologia/" target="_blank" class="main-button">
-                        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1L13.5 2.5L16.17 5.17L10.59 10.75C10.21 11.13 10 11.65 10 12.17V19C10 20.1 10.9 21 12 21C13.1 21 14 20.1 14 19V15H18C18.55 15 19 14.55 19 14V12C19 10.9 18.1 10 17 10H14V12.17L19.83 6.34L21 7.58V9ZM4 12C5.1 12 6 12.9 6 14C6 15.1 5.1 16 4 16C2.9 16 2 15.1 2 14C2 12.9 2.9 12 4 12Z" fill="currentColor"/>
-                        </svg>
-                        <span>Clínica Odontológica</span>
-                    </a>
-                    <p>Cuidados com seu sorriso</p>
-                </div>
-
-                <!-- Currículo -->
-                <div class="button-container fade-in-element">
-                    <div class="main-button disabled-button">
-                        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M14 2H6C4.9 2 4 2.9 4 4V20C4 21.1 4.89 22 5.99 22H18C19.1 22 20 21.1 20 20V8L14 2ZM18 20H6V4H13V9H18V20ZM8 12V14H16V12H8ZM8 16V18H13V16H8Z" fill="currentColor"/>
-                        </svg>
-                        <span>Currículo Digital</span>
-                    </div>
-                    <p>Em breve disponível</p>
-                </div>
-
-                <!-- Landing Page -->
-                <div class="button-container fade-in-element">
-                    <a href="https://dezaincody.github.io/roupafeminina/" target="_blank" class="main-button">
-                        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2ZM8 21L9.5 15.5L15 17L9.5 18.5L8 21Z" fill="currentColor"/>
-                        </svg>
-                        <span>Landing Page Especial</span>
-                    </a>
-                    <p>Página promocional</p>
-                </div>
-
-                <!-- Mapa -->
                 <div class="map-container fade-in-element">
                     <div class="map-wrapper">
                         <iframe 
